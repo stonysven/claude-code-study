@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# VitePress
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Environment
+.env
+
+# OS
+.DS_Store
+
+# Claude Code source (large, not part of this repo)
+src-code/
+
+# Data generation scripts output (runtime data lives in docs/public/)
+data/*.json

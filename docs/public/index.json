@@ -1,0 +1,994 @@
+{
+  "modules": [
+    {
+      "name": "cli",
+      "path": "src/cli/",
+      "description": "CLI 入口层，包含命令行参数解析、传输层建立和进程生命周期管理。是整个应用的入口点，负责与用户直接交互。",
+      "fileCount": 19,
+      "lineCount": 12372,
+      "exports": [
+        {
+          "name": "exit",
+          "kind": "function",
+          "line": 19,
+          "file": "cli/exit.ts"
+        },
+        {
+          "name": "exitWithError",
+          "kind": "function",
+          "line": 27,
+          "file": "cli/exit.ts"
+        },
+        {
+          "name": "createTransport",
+          "kind": "function",
+          "line": 16,
+          "file": "cli/transports/transportUtils.ts"
+        },
+        {
+          "name": "WebSocketTransport",
+          "kind": "class",
+          "line": 74,
+          "file": "cli/transports/WebSocketTransport.ts"
+        },
+        {
+          "name": "SerialBatchEventUploader",
+          "kind": "class",
+          "line": 64,
+          "file": "cli/transports/SerialBatchEventUploader.ts"
+        },
+        {
+          "name": "WorkerStateUploader",
+          "kind": "class",
+          "line": 29,
+          "file": "cli/transports/WorkerStateUploader.ts"
+        },
+        {
+          "name": "CCRInitError",
+          "kind": "class",
+          "line": 55,
+          "file": "cli/transports/ccrClient.ts"
+        },
+        {
+          "name": "CCRInitFailReason",
+          "kind": "type",
+          "line": 49,
+          "file": "cli/transports/ccrClient.ts"
+        },
+        {
+          "name": "RetryableError",
+          "kind": "class",
+          "line": 26,
+          "file": "cli/transports/SerialBatchEventUploader.ts"
+        },
+        {
+          "name": "parseArgs",
+          "kind": "function",
+          "line": 1,
+          "file": "cli/index.ts"
+        },
+        {
+          "name": "main",
+          "kind": "function",
+          "line": 1,
+          "file": "cli/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "bootstrap",
+      "path": "src/bootstrap/",
+      "description": "Bootstrap 引导模块，是整个应用状态管理的核心。负责引导状态初始化、Profile Checkpoint 恢复与重建、MDM 策略读取、Keychain 凭证预取，以及会话切换处理。",
+      "fileCount": 1,
+      "lineCount": 1759,
+      "exports": [
+        {
+          "name": "ChannelEntry",
+          "kind": "type",
+          "line": 37,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "AttributedCounter",
+          "kind": "type",
+          "line": 41,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "initBootstrapState",
+          "kind": "function",
+          "line": 431,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "registerChannel",
+          "kind": "function",
+          "line": 435,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "updateCounter",
+          "kind": "function",
+          "line": 452,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "markBootstrapComplete",
+          "kind": "function",
+          "line": 468,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "onSessionSwitch",
+          "kind": "const",
+          "line": 489,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "updateSessionConfig",
+          "kind": "function",
+          "line": 496,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "appendSessionEvent",
+          "kind": "function",
+          "line": 500,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "getSessionSnapshot",
+          "kind": "function",
+          "line": 511,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "loadProfile",
+          "kind": "function",
+          "line": 431,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "readCheckpoint",
+          "kind": "function",
+          "line": 452,
+          "file": "bootstrap/state.ts"
+        },
+        {
+          "name": "prefetchKeychain",
+          "kind": "function",
+          "line": 468,
+          "file": "bootstrap/state.ts"
+        }
+      ]
+    },
+    {
+      "name": "commands",
+      "path": "src/commands/",
+      "description": "命令系统，是用户与 AI 助手交互的核心入口之一。采用注册-路由-中间件-钩子四层架构，包含 git、debug、code-review、project 四大命令类别，以及远程配置子模块。",
+      "fileCount": 189,
+      "lineCount": 26617,
+      "exports": [
+        {
+          "name": "CommandDefinition",
+          "kind": "interface",
+          "line": 21,
+          "file": "commands/registry.ts"
+        },
+        {
+          "name": "CommandHandler",
+          "kind": "type",
+          "line": 32,
+          "file": "commands/registry.ts"
+        },
+        {
+          "name": "CommandRouter",
+          "kind": "class",
+          "line": 44,
+          "file": "commands/router.ts"
+        },
+        {
+          "name": "CommandCategory",
+          "kind": "enum",
+          "line": 95,
+          "file": "commands/types.ts"
+        },
+        {
+          "name": "Middleware",
+          "kind": "interface",
+          "line": 345,
+          "file": "commands/middleware.ts"
+        },
+        {
+          "name": "executeMiddleware",
+          "kind": "function",
+          "line": 398,
+          "file": "commands/middleware.ts"
+        },
+        {
+          "name": "CommandHooks",
+          "kind": "interface",
+          "line": 426,
+          "file": "commands/hooks.ts"
+        },
+        {
+          "name": "HookRegistry",
+          "kind": "class",
+          "line": 435,
+          "file": "commands/hooks.ts"
+        },
+        {
+          "name": "executeCommand",
+          "kind": "function",
+          "line": 509,
+          "file": "commands/executor.ts"
+        },
+        {
+          "name": "commitCommand",
+          "kind": "const",
+          "line": 134,
+          "file": "commands/git/commit.ts"
+        },
+        {
+          "name": "reviewCommand",
+          "kind": "const",
+          "line": 182,
+          "file": "commands/code-review/review.ts"
+        },
+        {
+          "name": "prCommand",
+          "kind": "const",
+          "line": 243,
+          "file": "commands/git/pr.ts"
+        },
+        {
+          "name": "debugCommand",
+          "kind": "const",
+          "line": 291,
+          "file": "commands/debug/debug.ts"
+        },
+        {
+          "name": "RedactedGithubToken",
+          "kind": "class",
+          "line": 16,
+          "file": "commands/remote-setup/api.ts"
+        },
+        {
+          "name": "ImportTokenResult",
+          "kind": "type",
+          "line": 35,
+          "file": "commands/remote-setup/api.ts"
+        },
+        {
+          "name": "ImportTokenError",
+          "kind": "type",
+          "line": 39,
+          "file": "commands/remote-setup/api.ts"
+        }
+      ]
+    },
+    {
+      "name": "tools",
+      "path": "src/tools/",
+      "description": "工具系统是 Claude Code 与本地环境交互的唯一通道。采用集中注册模式，包含文件操作工具（Read/Write/Edit）、Shell 执行工具（Bash）、代码搜索工具（Glob/Grep）、子代理工具（AgentTool）、Notebook 编辑工具等，通过三层权限模型进行访问控制。",
+      "fileCount": 186,
+      "lineCount": 50990,
+      "exports": [
+        {
+          "name": "Tool",
+          "kind": "interface",
+          "line": 18,
+          "file": "tools/index.ts"
+        },
+        {
+          "name": "ToolContext",
+          "kind": "interface",
+          "line": 50,
+          "file": "tools/index.ts"
+        },
+        {
+          "name": "ToolRegistry",
+          "kind": "class",
+          "line": 67,
+          "file": "tools/registry.ts"
+        },
+        {
+          "name": "FileReadTool",
+          "kind": "const",
+          "line": 30,
+          "file": "tools/FileReadTool/FileReadTool.ts"
+        },
+        {
+          "name": "FileWriteTool",
+          "kind": "const",
+          "line": 40,
+          "file": "tools/FileWriteTool/FileWriteTool.ts"
+        },
+        {
+          "name": "FileEditTool",
+          "kind": "const",
+          "line": 45,
+          "file": "tools/FileEditTool/FileEditTool.ts"
+        },
+        {
+          "name": "BashTool",
+          "kind": "const",
+          "line": 55,
+          "file": "tools/BashTool/BashTool.ts"
+        },
+        {
+          "name": "spawnCommand",
+          "kind": "function",
+          "line": 20,
+          "file": "tools/BashTool/spawn.ts"
+        },
+        {
+          "name": "GlobTool",
+          "kind": "const",
+          "line": 35,
+          "file": "tools/GlobTool/GlobTool.ts"
+        },
+        {
+          "name": "GrepTool",
+          "kind": "const",
+          "line": 42,
+          "file": "tools/GrepTool/GrepTool.ts"
+        },
+        {
+          "name": "NotebookEditTool",
+          "kind": "const",
+          "line": 30,
+          "file": "tools/NotebookEditTool/NotebookEditTool.ts"
+        },
+        {
+          "name": "AgentTool",
+          "kind": "const",
+          "line": 50,
+          "file": "tools/AgentTool/AgentTool.ts"
+        },
+        {
+          "name": "TaskGetTool",
+          "kind": "const",
+          "line": 38,
+          "file": "tools/TaskGetTool/TaskGetTool.ts"
+        },
+        {
+          "name": "checkPermission",
+          "kind": "function",
+          "line": 72,
+          "file": "tools/permission.ts"
+        },
+        {
+          "name": "dispatchTool",
+          "kind": "function",
+          "line": 45,
+          "file": "tools/dispatcher.ts"
+        },
+        {
+          "name": "resolvePath",
+          "kind": "function",
+          "line": 15,
+          "file": "tools/utils/path.ts"
+        },
+        {
+          "name": "NOTEBOOK_EDIT_TOOL_NAME",
+          "kind": "const",
+          "line": 2,
+          "file": "tools/NotebookEditTool/constants.ts"
+        },
+        {
+          "name": "TASK_GET_TOOL_NAME",
+          "kind": "const",
+          "line": 1,
+          "file": "tools/TaskGetTool/constants.ts"
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "path": "src/skills/",
+      "description": "Skill 框架是整个系统的能力扩展核心，负责技能的定义、加载、注册和执行管理。支持内置技能和通过 MCP 动态注入的外部技能，所有技能归一化为 BundledSkillDefinition，经过解析、校验、执行管道统一处理。",
+      "fileCount": 20,
+      "lineCount": 4065,
+      "exports": [
+        {
+          "name": "BundledSkillDefinition",
+          "kind": "type",
+          "line": 15,
+          "file": "skills/bundledSkills.ts"
+        },
+        {
+          "name": "MCPSkillBuilders",
+          "kind": "type",
+          "line": 26,
+          "file": "skills/mcpSkillBuilders.ts"
+        },
+        {
+          "name": "initializeSkills",
+          "kind": "function",
+          "line": 1,
+          "file": "skills/index.ts"
+        },
+        {
+          "name": "loadBundledSkills",
+          "kind": "function",
+          "line": 53,
+          "file": "skills/bundledSkills.ts"
+        },
+        {
+          "name": "loadMCPSkills",
+          "kind": "function",
+          "line": 33,
+          "file": "skills/mcpSkillBuilders.ts"
+        },
+        {
+          "name": "registerSkill",
+          "kind": "function",
+          "line": 1,
+          "file": "skills/registry.ts"
+        },
+        {
+          "name": "rememberSkill",
+          "kind": "const",
+          "line": 4,
+          "file": "skills/bundled/remember.ts"
+        },
+        {
+          "name": "loremIpsumSkill",
+          "kind": "const",
+          "line": 234,
+          "file": "skills/bundled/loremIpsum.ts"
+        },
+        {
+          "name": "resolveSkill",
+          "kind": "function",
+          "line": 1,
+          "file": "skills/resolver.ts"
+        },
+        {
+          "name": "validateParams",
+          "kind": "function",
+          "line": 1,
+          "file": "skills/validator.ts"
+        },
+        {
+          "name": "checkPermissions",
+          "kind": "function",
+          "line": 1,
+          "file": "skills/guard.ts"
+        },
+        {
+          "name": "executeHandler",
+          "kind": "function",
+          "line": 1,
+          "file": "skills/executor.ts"
+        },
+        {
+          "name": "processResult",
+          "kind": "function",
+          "line": 45,
+          "file": "skills/executor.ts"
+        }
+      ]
+    },
+    {
+      "name": "state",
+      "path": "src/state/",
+      "description": "状态管理系统，采用集中式 Store 架构。通过选择器（Selectors）派生状态，通过变更处理器（Change Handlers）管理状态流转，通过自定义 Hooks 将状态交付给 UI 组件。支持推测执行（SpeculationResult）和流式补全边界追踪（CompletionBoundary）。",
+      "fileCount": 6,
+      "lineCount": 1196,
+      "exports": [
+        {
+          "name": "AppStateStore",
+          "kind": "class",
+          "line": 1,
+          "file": "state/AppStateStore.ts"
+        },
+        {
+          "name": "CompletionBoundary",
+          "kind": "type",
+          "line": 41,
+          "file": "state/AppStateStore.ts"
+        },
+        {
+          "name": "SpeculationResult",
+          "kind": "type",
+          "line": 52,
+          "file": "state/AppStateStore.ts"
+        },
+        {
+          "name": "createBaseSelector",
+          "kind": "function",
+          "line": 18,
+          "file": "state/selectors.ts"
+        },
+        {
+          "name": "selectActiveAgentForInput",
+          "kind": "function",
+          "line": 59,
+          "file": "state/selectors.ts"
+        },
+        {
+          "name": "ActiveAgentForInput",
+          "kind": "type",
+          "line": 46,
+          "file": "state/selectors.ts"
+        },
+        {
+          "name": "selectLastMessage",
+          "kind": "function",
+          "line": 22,
+          "file": "state/selectors.ts"
+        },
+        {
+          "name": "deriveAgentFromLastMessage",
+          "kind": "function",
+          "line": 32,
+          "file": "state/selectors.ts"
+        },
+        {
+          "name": "handleChange",
+          "kind": "function",
+          "line": 24,
+          "file": "state/onChangeAppState.ts"
+        },
+        {
+          "name": "handleCompletionStart",
+          "kind": "function",
+          "line": 43,
+          "file": "state/onChangeAppState.ts"
+        },
+        {
+          "name": "handleMessageAppend",
+          "kind": "function",
+          "line": 67,
+          "file": "state/onChangeAppState.ts"
+        },
+        {
+          "name": "resolveTeammateVisibility",
+          "kind": "function",
+          "line": 46,
+          "file": "state/teammateViewHelpers.ts"
+        },
+        {
+          "name": "updateTeammateSelection",
+          "kind": "function",
+          "line": 88,
+          "file": "state/teammateViewHelpers.ts"
+        },
+        {
+          "name": "mergeTeammateStates",
+          "kind": "function",
+          "line": 116,
+          "file": "state/teammateViewHelpers.ts"
+        }
+      ]
+    },
+    {
+      "name": "hooks",
+      "path": "src/hooks/",
+      "description": "前端最大的模块，包含 UI 层所有状态管理与交互逻辑。涵盖会话生命周期管理、任务管理、背景任务导航、PR 状态追踪、文件历史快照、Swarm 初始化等自定义 Hooks，以及输入交互、代码复制、占位渲染等功能。",
+      "fileCount": 104,
+      "lineCount": 19308,
+      "exports": [
+        {
+          "name": "useCopyOnSelect",
+          "kind": "function",
+          "line": 26,
+          "file": "hooks/useCopyOnSelect.ts"
+        },
+        {
+          "name": "useSessionBackgrounding",
+          "kind": "function",
+          "line": 27,
+          "file": "hooks/useSessionBackgrounding.ts"
+        },
+        {
+          "name": "useTasksV2",
+          "kind": "function",
+          "line": 218,
+          "file": "hooks/useTasksV2.ts"
+        },
+        {
+          "name": "useBackgroundTaskNavigation",
+          "kind": "function",
+          "line": 67,
+          "file": "hooks/useBackgroundTaskNavigation.ts"
+        },
+        {
+          "name": "usePrStatus",
+          "kind": "function",
+          "line": 35,
+          "file": "hooks/usePrStatus.ts"
+        },
+        {
+          "name": "PrStatusState",
+          "kind": "type",
+          "line": 9,
+          "file": "hooks/usePrStatus.ts"
+        },
+        {
+          "name": "useFileHistorySnapshotInit",
+          "kind": "function",
+          "line": 9,
+          "file": "hooks/useFileHistorySnapshotInit.ts"
+        },
+        {
+          "name": "useSwarmInitialization",
+          "kind": "function",
+          "line": 30,
+          "file": "hooks/useSwarmInitialization.ts"
+        },
+        {
+          "name": "renderPlaceholder",
+          "kind": "function",
+          "line": 13,
+          "file": "hooks/renderPlaceholder.ts"
+        },
+        {
+          "name": "useAppState",
+          "kind": "function",
+          "line": 1,
+          "file": "hooks/useAppState.ts"
+        },
+        {
+          "name": "useSelector",
+          "kind": "function",
+          "line": 1,
+          "file": "hooks/useSelector.ts"
+        }
+      ]
+    },
+    {
+      "name": "mcp",
+      "path": "src/services/",
+      "description": "MCP（Model Context Protocol）协议集成子系统，是 Claude Code 最重要的扩展机制之一。分为连接层（传输层抽象、连接生命周期、重连策略）、协议层（工具注册、资源管理）、安全层（认证策略、权限过滤）、插件层（发现、加载、卸载）四个层次。",
+      "fileCount": 130,
+      "lineCount": 53818,
+      "exports": [
+        {
+          "name": "ConnectionState",
+          "kind": "enum",
+          "line": 21,
+          "file": "services/mcp/connectionManager.ts"
+        },
+        {
+          "name": "MCPConnectionManager",
+          "kind": "class",
+          "line": 30,
+          "file": "services/mcp/connectionManager.ts"
+        },
+        {
+          "name": "MCPToolDefinition",
+          "kind": "interface",
+          "line": 111,
+          "file": "services/mcp/toolRegistry.ts"
+        },
+        {
+          "name": "MCPToolRegistry",
+          "kind": "class",
+          "line": 127,
+          "file": "services/mcp/toolRegistry.ts"
+        },
+        {
+          "name": "MCPResource",
+          "kind": "interface",
+          "line": 166,
+          "file": "services/mcp/resourceManager.ts"
+        },
+        {
+          "name": "MCPResourceManager",
+          "kind": "class",
+          "line": 184,
+          "file": "services/mcp/resourceManager.ts"
+        },
+        {
+          "name": "MCPAuthStrategy",
+          "kind": "interface",
+          "line": 253,
+          "file": "services/mcp/auth/strategies.ts"
+        },
+        {
+          "name": "OAuthStrategy",
+          "kind": "class",
+          "line": 267,
+          "file": "services/mcp/auth/strategies.ts"
+        },
+        {
+          "name": "MCPAuthManager",
+          "kind": "class",
+          "line": 313,
+          "file": "services/mcp/auth/authManager.ts"
+        },
+        {
+          "name": "MCPPluginManifest",
+          "kind": "interface",
+          "line": 405,
+          "file": "services/mcp/plugins/pluginDiscovery.ts"
+        },
+        {
+          "name": "MCPPluginDiscovery",
+          "kind": "class",
+          "line": 431,
+          "file": "services/mcp/plugins/pluginDiscovery.ts"
+        },
+        {
+          "name": "MCPPluginManager",
+          "kind": "class",
+          "line": 491,
+          "file": "services/mcp/plugins/pluginManager.ts"
+        },
+        {
+          "name": "MCPPermissionFilter",
+          "kind": "class",
+          "line": 581,
+          "file": "services/mcp/plugins/permissionFilter.ts"
+        },
+        {
+          "name": "SecurityCheckResult",
+          "kind": "type",
+          "line": 12,
+          "file": "services/remoteManagedSettings/securityCheck.tsx"
+        },
+        {
+          "name": "mcpSecurityGuard",
+          "kind": "function",
+          "line": 1,
+          "file": "services/mcp/securityIntegration.ts"
+        }
+      ]
+    },
+    {
+      "name": "services",
+      "path": "src/remote/",
+      "description": "远程会话管理与 API 通信层。包含 API 集成层（消息转换适配器、流式响应处理）、远程会话管理层（RemoteSessionManager、SessionsWebSocket）、成本追踪（Token 计量、成本计算引擎）、速率限制与重试逻辑（令牌桶算法、指数退避策略）。",
+      "fileCount": 4,
+      "lineCount": 1131,
+      "exports": [
+        {
+          "name": "ConvertedMessage",
+          "kind": "type",
+          "line": 145,
+          "file": "remote/sdkMessageAdapter.ts"
+        },
+        {
+          "name": "RemoteSessionManager",
+          "kind": "class",
+          "line": 95,
+          "file": "remote/RemoteSessionManager.ts"
+        },
+        {
+          "name": "RemoteSessionConfig",
+          "kind": "type",
+          "line": 50,
+          "file": "remote/RemoteSessionManager.ts"
+        },
+        {
+          "name": "RemoteSessionCallbacks",
+          "kind": "type",
+          "line": 64,
+          "file": "remote/RemoteSessionManager.ts"
+        },
+        {
+          "name": "RemotePermissionResponse",
+          "kind": "type",
+          "line": 40,
+          "file": "remote/RemoteSessionManager.ts"
+        },
+        {
+          "name": "SessionsWebSocket",
+          "kind": "class",
+          "line": 82,
+          "file": "remote/SessionsWebSocket.ts"
+        },
+        {
+          "name": "SessionsWebSocketCallbacks",
+          "kind": "type",
+          "line": 57,
+          "file": "remote/SessionsWebSocket.ts"
+        },
+        {
+          "name": "sendRequest",
+          "kind": "function",
+          "line": 1,
+          "file": "services/apiClient.ts"
+        },
+        {
+          "name": "streamClaudeResponse",
+          "kind": "function",
+          "line": 1,
+          "file": "services/streamHandler.ts"
+        },
+        {
+          "name": "recordApiCall",
+          "kind": "function",
+          "line": 1,
+          "file": "services/costTracker.ts"
+        },
+        {
+          "name": "RateLimiter",
+          "kind": "class",
+          "line": 1,
+          "file": "services/rateLimiter.ts"
+        },
+        {
+          "name": "RetryHandler",
+          "kind": "class",
+          "line": 1,
+          "file": "services/retryHandler.ts"
+        }
+      ]
+    },
+    {
+      "name": "coordinator",
+      "path": "src/coordinator/",
+      "description": "Coordinator 协调层，是多代理系统的核心调度中心。负责任务分解、代理选择、能力验证和执行顺序编排。支持顺序执行、并行执行、条件分支、回滚重试等多种调度策略，通过消息路由实现代理间通信。",
+      "fileCount": 1,
+      "lineCount": 370,
+      "exports": [
+        {
+          "name": "initializeAgentConfig",
+          "kind": "function",
+          "line": 36,
+          "file": "coordinator/coordinatorMode.ts"
+        },
+        {
+          "name": "registerAgent",
+          "kind": "function",
+          "line": 49,
+          "file": "coordinator/coordinatorMode.ts"
+        },
+        {
+          "name": "validateCapabilities",
+          "kind": "function",
+          "line": 80,
+          "file": "coordinator/coordinatorMode.ts"
+        },
+        {
+          "name": "dispatchTask",
+          "kind": "function",
+          "line": 111,
+          "file": "coordinator/coordinatorMode.ts"
+        },
+        {
+          "name": "routeMessage",
+          "kind": "function",
+          "line": 1,
+          "file": "coordinator/coordinatorMode.ts"
+        },
+        {
+          "name": "injectContext",
+          "kind": "function",
+          "line": 111,
+          "file": "coordinator/coordinatorMode.ts"
+        },
+        {
+          "name": "executeSubAgent",
+          "kind": "function",
+          "line": 111,
+          "file": "coordinator/coordinatorMode.ts"
+        }
+      ]
+    },
+    {
+      "name": "plugins",
+      "path": "src/plugins/",
+      "description": "插件与扩展系统，是 Claude Code 的核心扩展机制。负责内置插件管理、插件加载、MCP 服务器配置以及自定义工具注册。采用声明式配置，支持钩子订阅、MCP 服务器声明和自定义工具注册，仅有 184 行代码实现了完整的插件生命周期管理。",
+      "fileCount": 2,
+      "lineCount": 184,
+      "exports": [
+        {
+          "name": "BUILTIN_MARKETPLACE_NAME",
+          "kind": "const",
+          "line": 23,
+          "file": "plugins/builtinPlugins.ts"
+        },
+        {
+          "name": "loadPlugins",
+          "kind": "function",
+          "line": 28,
+          "file": "plugins/builtinPlugins.ts"
+        },
+        {
+          "name": "resolveBuiltinPlugins",
+          "kind": "function",
+          "line": 37,
+          "file": "plugins/builtinPlugins.ts"
+        },
+        {
+          "name": "mergePluginConfigs",
+          "kind": "function",
+          "line": 46,
+          "file": "plugins/builtinPlugins.ts"
+        },
+        {
+          "name": "validatePluginSchema",
+          "kind": "function",
+          "line": 57,
+          "file": "plugins/builtinPlugins.ts"
+        },
+        {
+          "name": "getBuiltinPluginByName",
+          "kind": "function",
+          "line": 108,
+          "file": "plugins/builtinPlugins.ts"
+        },
+        {
+          "name": "getEnabledBuiltinPlugins",
+          "kind": "function",
+          "line": 126,
+          "file": "plugins/builtinPlugins.ts"
+        },
+        {
+          "name": "bundledPlugins",
+          "kind": "const",
+          "line": 20,
+          "file": "plugins/bundled/index.ts"
+        },
+        {
+          "name": "PluginDescriptor",
+          "kind": "interface",
+          "line": 41,
+          "file": "plugins/builtinPlugins.ts"
+        }
+      ]
+    },
+    {
+      "name": "assistant",
+      "path": "src/assistant/",
+      "description": "Assistant 核心模块，高度聚焦的消息处理中枢，仅 88 行代码。负责对话管理和历史上下文维护，通过分页机制加载会话历史（HistoryPage），为代理提供必要的背景信息。包含鉴权上下文（HistoryAuthCtx）确保数据安全。",
+      "fileCount": 1,
+      "lineCount": 88,
+      "exports": [
+        {
+          "name": "HISTORY_PAGE_SIZE",
+          "kind": "const",
+          "line": 7,
+          "file": "assistant/sessionHistory.ts"
+        },
+        {
+          "name": "HistoryPage",
+          "kind": "type",
+          "line": 9,
+          "file": "assistant/sessionHistory.ts"
+        },
+        {
+          "name": "HistoryAuthCtx",
+          "kind": "type",
+          "line": 25,
+          "file": "assistant/sessionHistory.ts"
+        },
+        {
+          "name": "handleUserMessage",
+          "kind": "function",
+          "line": 31,
+          "file": "assistant/sessionHistory.ts"
+        },
+        {
+          "name": "fetchHistoryPage",
+          "kind": "function",
+          "line": 73,
+          "file": "assistant/sessionHistory.ts"
+        },
+        {
+          "name": "filterRelevantContext",
+          "kind": "function",
+          "line": 81,
+          "file": "assistant/sessionHistory.ts"
+        },
+        {
+          "name": "buildPromptContext",
+          "kind": "function",
+          "line": 81,
+          "file": "assistant/sessionHistory.ts"
+        },
+        {
+          "name": "persistMessagePair",
+          "kind": "function",
+          "line": 73,
+          "file": "assistant/sessionHistory.ts"
+        }
+      ]
+    }
+  ]
+}

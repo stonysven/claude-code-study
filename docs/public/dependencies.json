@@ -1,0 +1,242 @@
+{
+  "nodes": [
+    {
+      "id": "cli",
+      "label": "CLI",
+      "fileCount": 19,
+      "lineCount": 12372,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "bootstrap",
+      "label": "Bootstrap",
+      "fileCount": 1,
+      "lineCount": 1759,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "commands",
+      "label": "Commands",
+      "fileCount": 189,
+      "lineCount": 26617,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "tools",
+      "label": "Tools",
+      "fileCount": 186,
+      "lineCount": 50990,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "fileCount": 20,
+      "lineCount": 4065,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "state",
+      "label": "State",
+      "fileCount": 6,
+      "lineCount": 1196,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "hooks",
+      "label": "Hooks",
+      "fileCount": 104,
+      "lineCount": 19308,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "mcp",
+      "label": "MCP",
+      "fileCount": 130,
+      "lineCount": 53818,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "services",
+      "label": "Services",
+      "fileCount": 4,
+      "lineCount": 1131,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "coordinator",
+      "label": "Coordinator",
+      "fileCount": 1,
+      "lineCount": 370,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "plugins",
+      "label": "Plugins",
+      "fileCount": 2,
+      "lineCount": 184,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "assistant",
+      "label": "Assistant",
+      "fileCount": 1,
+      "lineCount": 88,
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "edges": [
+    {
+      "source": "cli",
+      "target": "bootstrap",
+      "count": 5
+    },
+    {
+      "source": "cli",
+      "target": "services",
+      "count": 2
+    },
+    {
+      "source": "bootstrap",
+      "target": "state",
+      "count": 3
+    },
+    {
+      "source": "commands",
+      "target": "tools",
+      "count": 4
+    },
+    {
+      "source": "commands",
+      "target": "services",
+      "count": 2
+    },
+    {
+      "source": "commands",
+      "target": "mcp",
+      "count": 1
+    },
+    {
+      "source": "commands",
+      "target": "hooks",
+      "count": 2
+    },
+    {
+      "source": "tools",
+      "target": "state",
+      "count": 2
+    },
+    {
+      "source": "tools",
+      "target": "assistant",
+      "count": 1
+    },
+    {
+      "source": "skills",
+      "target": "mcp",
+      "count": 3
+    },
+    {
+      "source": "skills",
+      "target": "tools",
+      "count": 1
+    },
+    {
+      "source": "skills",
+      "target": "state",
+      "count": 1
+    },
+    {
+      "source": "state",
+      "target": "hooks",
+      "count": 4
+    },
+    {
+      "source": "hooks",
+      "target": "state",
+      "count": 6
+    },
+    {
+      "source": "hooks",
+      "target": "assistant",
+      "count": 3
+    },
+    {
+      "source": "hooks",
+      "target": "coordinator",
+      "count": 1
+    },
+    {
+      "source": "mcp",
+      "target": "services",
+      "count": 2
+    },
+    {
+      "source": "mcp",
+      "target": "plugins",
+      "count": 1
+    },
+    {
+      "source": "services",
+      "target": "mcp",
+      "count": 3
+    },
+    {
+      "source": "services",
+      "target": "hooks",
+      "count": 1
+    },
+    {
+      "source": "coordinator",
+      "target": "assistant",
+      "count": 3
+    },
+    {
+      "source": "coordinator",
+      "target": "tools",
+      "count": 1
+    },
+    {
+      "source": "coordinator",
+      "target": "state",
+      "count": 1
+    },
+    {
+      "source": "plugins",
+      "target": "tools",
+      "count": 2
+    },
+    {
+      "source": "plugins",
+      "target": "mcp",
+      "count": 2
+    },
+    {
+      "source": "plugins",
+      "target": "hooks",
+      "count": 2
+    },
+    {
+      "source": "assistant",
+      "target": "hooks",
+      "count": 2
+    },
+    {
+      "source": "assistant",
+      "target": "state",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "claude-code-study",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "analyze": "bun run scripts/analyze.ts",
+    "generate:index": "bun run scripts/generate-index.ts",
+    "generate:content": "bun run scripts/generate-content.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13"
+  },
+  "dependencies": {
+    "@types/d3": "^7.4.3",
+    "d3": "^7.9.0",
+    "highlight.js": "^11.11.0",
+    "typescript": "^5.7.0"
+  }
+}

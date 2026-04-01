@@ -1,0 +1,77 @@
+@import './variables.css';
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei',
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+code, pre, .vp-code-group {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Menlo, Monaco, monospace;
+}
+
+.vp-doc div[class*='language-'] {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.dark .vp-doc div[class*='language-'] {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.vp-doc h2 {
+  counter-increment: h2-counter;
+}
+
+.custom-block.tip {
+  border-color: var(--vp-c-brand-1);
+}
+
+.VPBreadcrumb {
+  font-size: 13px;
+}
+
+/* Responsive sidebar */
+@media (max-width: 960px) {
+  :root {
+    --vp-sidebar-width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --vp-layout-max-width: 100%;
+    --vp-content-max-width: 100%;
+  }
+
+  .module-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .VPNav,
+  .VPSidebar,
+  .module-controls,
+  .module-sort {
+    display: none !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better code block experience on mobile */
+@media (max-width: 640px) {
+  .code-block-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .call-chain {
+    font-size: 13px;
+  }
+}
