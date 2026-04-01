@@ -16,3 +16,4 @@ src-code/
 
 # Data generation scripts output (runtime data lives in docs/public/)
 data/*.json
+src-code
